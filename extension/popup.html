@@ -77,5 +77,21 @@
       <button type="button" class="icon-button" id="next" title="下一页" aria-label="下一页"><svg class="icon"><use href="#i-chevron"/></svg></button>
     </nav>
   </footer>
+  <dialog id="topic-preview" aria-labelledby="preview-title">
+    <div class="preview-bar">
+      <span>主题预览</span>
+      <button id="preview-close" type="button" class="text-button" autofocus>关闭</button>
+    </div>
+    <div id="preview-scroll" class="preview-scroll" tabindex="0" role="region" aria-label="主题正文">
+      <h2 id="preview-title"></h2>
+      <p id="preview-meta"></p>
+      <p id="preview-status" role="status" hidden></p>
+      <button id="preview-retry" type="button" class="text-button" hidden>重试</button>
+      <article id="preview-content"></article>
+    </div>
+    <div class="preview-actions">
+      <a id="preview-open-original" target="_blank" rel="noopener noreferrer">打开原帖</a>
+    </div>
+  </dialog>
 </body>
 </html>

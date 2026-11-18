@@ -31,6 +31,6 @@
     }
   },
   "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'none'; connect-src https://edge.v2ex.com; base-uri 'none'"
+    "extension_pages": "script-src 'self'; object-src 'none'; connect-src https://edge.v2ex.com; img-src 'self' https://i.v2ex.co https://cdn.v2ex.com; base-uri 'none'"
   }
 }

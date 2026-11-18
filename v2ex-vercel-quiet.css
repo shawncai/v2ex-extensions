@@ -1,0 +1,168 @@
+/* V2EX 低调灰阶
+   将整个文件粘贴到 V2EX 设置的「自定义 CSS」。深浅色跟随站内选择。 */
+
+@supports (color: light-dark(#fff, #000)) {
+  :root {
+    color-scheme: light dark;
+    --v2quiet-page: light-dark(#f7f7f7, #121212);
+    --v2quiet-panel: light-dark(#fdfdfd, #191919);
+    --v2quiet-raised: light-dark(#f5f5f5, #202020);
+    --v2quiet-hover: light-dark(#eee, #282828);
+    --v2quiet-active: light-dark(#e7e7e7, #303030);
+    --v2quiet-line: light-dark(#e3e3e3, #333);
+    --v2quiet-control: light-dark(#c5c5c5, #505050);
+    --v2quiet-text: light-dark(#262626, #e5e5e5);
+    --v2quiet-secondary: light-dark(#525252, #bdbdbd);
+    --v2quiet-muted: light-dark(#686868, #a0a0a0);
+    --v2quiet-focus: light-dark(#595959, #b3b3b3);
+
+    --box-background-color: var(--v2quiet-panel);
+    --box-background-alt-color: var(--v2quiet-raised);
+    --box-background-hover-color: var(--v2quiet-hover);
+    --box-foreground-color: var(--v2quiet-text);
+    --box-border-color: var(--v2quiet-line);
+    --box-border-hover-color: var(--v2quiet-control);
+    --box-border-focus-color: var(--v2quiet-focus);
+    --box-border-radius: 6px;
+    --button-background-color: var(--v2quiet-panel);
+    --button-background-hover-color: var(--v2quiet-hover);
+    --button-background-active-color: var(--v2quiet-active);
+    --button-foreground-color: var(--v2quiet-secondary);
+    --button-foreground-hover-color: var(--v2quiet-text);
+    --button-border-color: var(--v2quiet-control);
+    --button-border-hover-color: var(--v2quiet-focus);
+    --color-foreground: var(--v2quiet-text);
+    --color-graphite: var(--v2quiet-secondary);
+    --color-gray: var(--v2quiet-muted);
+    --color-fade: var(--v2quiet-muted);
+    --link-color: var(--v2quiet-secondary);
+    --link-darker-color: var(--v2quiet-muted);
+    --link-visited-color: var(--v2quiet-muted);
+    --link-hover-color: var(--v2quiet-text);
+  }
+
+  :root[data-site-theme="light"] { color-scheme: light; }
+  :root[data-site-theme="dark"] { color-scheme: dark; }
+
+  /* 页面背景与分隔线 */
+  html body,
+  html #Wrapper {
+    background-color: var(--v2quiet-page);
+  }
+
+  html #Wrapper,
+  html #Wrapper.Night {
+    background-image: none;
+  }
+
+  html :is(#Top, #site-header, #Bottom) {
+    background-color: var(--v2quiet-panel);
+    border-color: var(--v2quiet-line);
+    box-shadow: none;
+  }
+
+  html #Bottom { color: var(--v2quiet-muted); }
+
+  :is(#Main, #Rightbar) > .box,
+  #Wrapper > .content > .box {
+    border: 1px solid var(--v2quiet-line);
+    box-shadow: none;
+  }
+
+  /* 分类栏和主题列表 */
+  #Tabs {
+    border-top-left-radius: var(--box-border-radius);
+    border-top-right-radius: var(--box-border-radius);
+  }
+
+  #Tabs a.tab:any-link { color: var(--v2quiet-secondary); }
+  #Tabs a.tab:hover {
+    background: var(--v2quiet-hover);
+    color: var(--v2quiet-text);
+  }
+
+  #Tabs a.tab_current:any-link {
+    background: var(--v2quiet-raised);
+    color: var(--v2quiet-text);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  #SecondaryTabs { border-bottom-color: var(--v2quiet-line); }
+
+  .item_title {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  a.topic-link:link { color: var(--v2quiet-text); }
+  a.topic-link:visited { color: var(--v2quiet-muted); }
+  a.topic-link:hover { color: var(--v2quiet-text); }
+  .topic_info { color: var(--v2quiet-muted); }
+
+  a.node:any-link {
+    background-color: var(--v2quiet-raised);
+    color: var(--v2quiet-secondary);
+    border-radius: 4px;
+  }
+
+  a.node:hover {
+    background-color: var(--v2quiet-hover);
+    color: var(--v2quiet-text);
+  }
+
+  a:is(.count_livid, .count_orange, .count_green, .count_blue):any-link {
+    background-color: var(--v2quiet-raised);
+    color: var(--v2quiet-secondary);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+
+  a:is(.count_orange, .count_green, .count_blue):link {
+    background-color: var(--v2quiet-active);
+    color: var(--v2quiet-text);
+  }
+
+  a:is(.count_livid, .count_orange, .count_green, .count_blue):hover {
+    background-color: var(--v2quiet-active);
+    color: var(--v2quiet-text);
+  }
+
+  /* 正文、回复与表单 */
+  :is(.topic_content, .reply_content) { line-height: 1.7; }
+  :is(.topic_content, .reply_content) a[href]:not(:has(img)) {
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
+
+  :is(#Main, #Rightbar) :is(.topic_buttons, .cell.buttons, .inner.buttons) {
+    background: var(--v2quiet-raised);
+  }
+
+  .node-header > .page-content-header {
+    background: var(--v2quiet-raised);
+    color: var(--v2quiet-text);
+  }
+
+  .node-breadcrumb a:any-link { color: var(--v2quiet-secondary); }
+
+  :is(#Wrapper, #Top) .super.normal.button {
+    background: var(--v2quiet-panel);
+    color: var(--v2quiet-text);
+    border: 1px solid var(--v2quiet-control);
+    border-radius: 5px;
+    text-shadow: none;
+    box-shadow: none;
+  }
+
+  :is(#Wrapper, #Top) .super.normal.button:hover {
+    background: var(--v2quiet-hover);
+    border-color: var(--v2quiet-focus);
+  }
+
+  :is(#Top, #site-header, #Wrapper, #Bottom) :is(a, button, input, select, textarea):focus-visible {
+    outline: 2px solid var(--v2quiet-focus);
+    outline-offset: 2px;
+  }
+}

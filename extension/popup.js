@@ -1,4 +1,5 @@
 import { fetchFeed } from './feeds.js';
+import { openTopicPreview } from './preview.js';
 import { getCredentials, invalidateFeed } from './session.js';
 
 const el = id => document.getElementById(id);
@@ -77,6 +78,11 @@ function topicRow(topic) {
   }
   if (topic.author) meta.append(make('span', 'author', topic.author));
   if (topic.created) meta.append(topicTime(topic.created));
+  const preview = make('button', 'topic-preview', '预览');
+  preview.type = 'button';
+  preview.setAttribute('aria-label', '预览：' + topic.title);
+  preview.addEventListener('click', () => openTopicPreview(topic, preview));
+  meta.append(preview);
   row.append(head, meta);
   return row;
 }
