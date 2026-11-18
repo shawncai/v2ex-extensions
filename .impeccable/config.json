@@ -1,0 +1,27 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "extension/popup.html"
+        ],
+        "createdAt": "2026-11-18T08:19:00.349Z",
+        "reason": "Agent review: the selected tab underline meets the navigation divider by design. Its label is centered in a 38px button; the zero bottom inset is on the wrapper."
+      },
+      {
+        "rule": "overused-font",
+        "value": "geist",
+        "files": [
+          "extension/popup.html",
+          "extension/settings.html"
+        ],
+        "createdAt": "2026-11-18T08:19:13.508Z",
+        "reason": "Agent choice: Geist matches the requested Vercel style on the reading popup and token settings, with system fallbacks for Chinese text."
+      }
+    ]
+  }
+}
